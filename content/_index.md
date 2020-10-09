@@ -28,5 +28,3 @@ container: "container-fluid"
       </ul>
   </div>
 </div>
-
-{{< home-stayconnected >}}
