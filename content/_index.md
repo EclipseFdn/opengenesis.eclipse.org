@@ -12,19 +12,28 @@ layout: "single"
 container: "container-fluid"
 ---
 
-<div class="row margin-top-50">
-  <div class="col-sm-12 news-list">
-    {{< taxonomy_list taxonomy="categories" section="news" term="announcements" >}} 
-       <ul class="list-inline news-list-links">
-        <li class="news-list-links-view-all"><a href="categories/announcements">View all</a></li>
-        <li class="news-list-links-rss"><a href="news/index.xml" title="Subscribe to our RSS-feed">Subscribe to our RSS-feed <i class="fa fa-rss"></i></a></li>
-      </ul>
-  </div>
-  <div class="col-sm-12 news-list">
-    {{< taxonomy_list taxonomy="categories" section="news" term="community-news" >}}
-      <ul class="list-inline news-list-links">
-        <li class="news-list-links-view-all"><a href="categories/community-news">View all</a></li>
-        <li class="news-list-links-rss"><a href="news/index.xml" title="Subscribe to our RSS-feed">Subscribe to our RSS-feed <i class="fa fa-rss"></i></a></li>
-      </ul>
-  </div>
-</div>
+{{< grid/section-container >}}
+  {{< grid/div class="col-sm-15 margin-top-30" isMarkdown="false" >}}
+    {{< newsroom/news
+          title="News"
+          titleClass="heading-line text-center"
+          id="news-list-container"
+          publishTarget="opengenesis"
+          count="5"
+          templateId="news-no-mh"
+          templatePath="node_modules/eclipsefdn-hugo-solstice-theme/js/templates/news-no-mh.mustache"
+          includeList="true" >}}
+  {{</ grid/div >}}
+  {{< grid/div class="col-sm-8 col-sm-offset-1 margin-top-30" isMarkdown="false" >}}
+    {{< newsroom/events
+          title="Events"
+          titleClass="heading-line text-center"
+          containerClass="news-items event-container"
+          id="events-list-container"
+          publishTarget="opengenesis"
+          count="5"
+          templateId="event-list-format"
+          templatePath="node_modules/eclipsefdn-hugo-solstice-theme/js/templates/event-list-format.mustache"
+          includeList="true" >}}
+  {{</ grid/div >}}
+{{</ grid/section-container >}}
